@@ -35,7 +35,7 @@
             <!-- THUMB -->
             <alohakit:RoundRectangle
                 x:Name="Part_Thumb"
-	            X="0"
+	            X="4"
 	            Y="4"
 	            WidthRequest="22"
 	            HeightRequest="22"
@@ -73,6 +73,7 @@
                     </VisualState>
                     <VisualState x:Name="mouseover">
                         <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.9" />
                             <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
                             <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
@@ -80,6 +81,7 @@
                     </VisualState>
                     <VisualState x:Name="pressed">
                         <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.9" />
                             <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
                             <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
@@ -103,6 +105,7 @@
                     </VisualState>
                     <VisualState x:Name="mouseover:checked">
                         <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.9" />
                             <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
                             <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
@@ -110,6 +113,7 @@
                     </VisualState>
                     <VisualState x:Name="pressed:checked">
                         <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.9" />
                             <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
                             <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />

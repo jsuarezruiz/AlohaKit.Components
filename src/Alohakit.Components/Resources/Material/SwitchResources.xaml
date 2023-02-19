@@ -17,45 +17,46 @@
             <!-- TRACK -->
             <alohakit:RoundRectangle
                 x:Name="Part_Track"
-	            X="2"
-	            Y="2"
-	            HeightRequest="24"
-                WidthRequest="34"
+	            X="8"
+	            Y="8"
+	            HeightRequest="33"
+                WidthRequest="52"
                 Fill="{Binding TrackColor}" />
             <!-- OUTLINE -->
             <alohakit:RoundRectangle
                 x:Name="Part_Track_Outline"
-	            X="2"
-	            Y="2"
-	            HeightRequest="24"
-                WidthRequest="34"
+                X="8"
+	            Y="8"
+                HeightRequest="33"
+                WidthRequest="52"
                 Stroke="{Binding OutlineColor}"
                 StrokeThickness="{Binding OutlineWidth}" />
             <!-- THUMB -->
             <alohakit:RoundRectangle
                 x:Name="Part_Thumb_Effect"
-	            X="0"
-	            Y="0"
-	            WidthRequest="28"
-	            HeightRequest="28"
+	            X="4"
+	            Y="4"
+	            WidthRequest="40"
+	            HeightRequest="40"
                 CornerRadius="24"
                 IsVisible="{Binding IsPointerOver}"
                 Opacity="0.25"
                 Fill="{Binding ThumbColor}"/>
-            <alohakit:Ellipse
+            <alohakit:RoundRectangle
                 x:Name="Part_Thumb"
-	            X="8"
-	            Y="8"
-	            WidthRequest="12"
-	            HeightRequest="12"
+	            X="12"
+	            Y="12"
+	            WidthRequest="24"
+	            HeightRequest="24"
+                CornerRadius="24"
                 Fill="{Binding ThumbColor}"/>
         </alohakit:CanvasView>
     </ControlTemplate>
 
     <Style x:Key="MaterialSwitchStyle" TargetType="components:Switch">
         <Setter Property="ControlTemplate" Value="{StaticResource MaterialSwitchTemplate}" />
-        <Setter Property="WidthRequest" Value="38" />
-        <Setter Property="HeightRequest" Value="28" />
+        <Setter Property="WidthRequest" Value="68" />
+        <Setter Property="HeightRequest" Value="48" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="OutlineWidth" Value="2" />

@@ -10,8 +10,8 @@ namespace Alohakit.Components
     public class Switch : Component, ISwitch
     {
         const string ElementCanvasView = "Part_Canvas";
-        const string ElementTrack = "Part_Track"; 
-        const string ElementOutline = "Part_Track_Outline"; 
+        const string ElementTrack = "Part_Track";
+        const string ElementOutline = "Part_Track_Outline";
         const string ElementThumbEffect = "Part_Thumb_Effect";
         const string ElementThumb = "Part_Thumb";
 
@@ -19,10 +19,12 @@ namespace Alohakit.Components
         RoundRectangle _track;
         RoundRectangle _outline;
         Shape _thumbEffect;
+        float _thumbEffectX;
         Shape _thumb;
+        float _thumbX;
 
         IAnimationManager _animationManager;
-    
+
 
         public static readonly BindableProperty IsCheckedProperty = BindableProperty.Create(
             nameof(IsChecked),
@@ -35,8 +37,8 @@ namespace Alohakit.Components
             });
 
         public static readonly BindableProperty TrackColorProperty = SwitchComponent.TrackColorProperty;
-        public static readonly BindableProperty TrackOpacityProperty = SwitchComponent.TrackOpacityProperty; 
-        
+        public static readonly BindableProperty TrackOpacityProperty = SwitchComponent.TrackOpacityProperty;
+
         public static readonly BindableProperty ThumbColorProperty = SwitchComponent.ThumbColorProperty;
         public static readonly BindableProperty ThumbOpacityProperty = SwitchComponent.ThumbOpacityProperty;
 
@@ -44,8 +46,8 @@ namespace Alohakit.Components
             nameof(Command),
             typeof(ICommand),
             typeof(Switch),
-            null); 
-        
+            null);
+
         public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(
             nameof(CommandParameter),
             typeof(object),
@@ -122,7 +124,7 @@ namespace Alohakit.Components
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public float RippleProgress { get; set; } = 0f;
-                
+
         [EditorBrowsable(EditorBrowsableState.Never)]
         internal float ThumbPositionProgress { get; private set; } = 1f;
 
@@ -131,14 +133,21 @@ namespace Alohakit.Components
         protected override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            
+
             _canvasView = GetTemplateChild(ElementCanvasView) as CanvasView;
             _track = GetTemplateChild(ElementTrack) as RoundRectangle;
             _outline = GetTemplateChild(ElementOutline) as RoundRectangle;
             _thumbEffect = GetTemplateChild(ElementThumbEffect) as Shape;
+
+            if (_thumbEffect != null)
+                _thumbEffectX = _thumbEffect.X;
+
             _thumb = GetTemplateChild(ElementThumb) as Shape;
 
-            if(_canvasView != null)
+            if (_thumb != null)
+                _thumbX = _thumb.X;
+
+            if (_canvasView != null)
             {
                 _canvasView.Drawing += OnCanvasViewDrawing;
 
@@ -153,7 +162,7 @@ namespace Alohakit.Components
         {
             string state;
 
-            switch(ComponentState)
+            switch (ComponentState)
             {
                 case ComponentState.Normal:
                     state = IsChecked ? "normal:checked" : "normal";
@@ -178,7 +187,7 @@ namespace Alohakit.Components
 
         public override void ChangeVisual()
         {
-            switch(Visual)
+            switch (Visual)
             {
                 case Visual.Cupertino:
                     Application.Current.Resources.TryGetValue("CupertinoSwitchStyle", out object cupertinoControlStyle);
@@ -194,7 +203,6 @@ namespace Alohakit.Components
                     break;
             }
         }
-
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void StartRippleEffect()
@@ -214,7 +222,7 @@ namespace Alohakit.Components
                         RippleProgress = start.Lerp(end, progress);
                         _canvasView?.Invalidate();
                     },
-                    duration: 0.25f,
+                    duration: 0.3f,
                     easing: Easing.SinInOut,
                     finished: () =>
                     {
@@ -266,9 +274,9 @@ namespace Alohakit.Components
                 _outline.CornerRadius = cornerRadius;
             }
 
-            if(_thumbEffect != null)
+            if (_thumbEffect != null)
             {
-                var lX = 0;
+                var lX = _thumbEffectX;
                 var rX = (float)(_canvasView.WidthRequest - (lX + _thumbEffect.WidthRequest));
                 _thumbEffect.X = GetThumbPosition(lX, rX);
 
@@ -278,7 +286,7 @@ namespace Alohakit.Components
 
             if (_thumb != null)
             {
-                var lX = 8;
+                var lX = _thumbX;
                 var rX = (float)(_canvasView.WidthRequest - (lX + _thumb.WidthRequest));
                 _thumb.X = GetThumbPosition(lX, rX);
             }
@@ -314,15 +322,17 @@ namespace Alohakit.Components
             if (RippleProgress < 0)
                 return;
 
-            var color = RippleColor;
+            var rippleBounds = _track != null ? new RectF(_track.X, _track.Y, _track.WidthRequest, _track.HeightRequest) : bounds;
+            var rippleColor = RippleColor;
             var point = TouchPoint;
+
             var cornerRadius = Math.Min(bounds.Width, bounds.Height) / 2;
 
             canvas.DrawRippleEffect(
-                bounds,
+                rippleBounds,
                 cornerRadius,
                 point,
-                color,
+                rippleColor,
                 RippleProgress
             );
         }
@@ -332,7 +342,7 @@ namespace Alohakit.Components
             if (Handler is null)
                 return;
 
-            _animationManager ??=  
+            _animationManager ??=
                 Handler.MauiContext?.Services.GetRequiredService<IAnimationManager>();
 
             ThumbPositionProgress = 0f;
@@ -346,7 +356,7 @@ namespace Alohakit.Components
                         ThumbPositionProgress = start.Lerp(end, progress);
                         _canvasView?.Invalidate();
                     },
-                    duration: 0.25f,
+                    duration: 0.5f,
                     easing: Easing.CubicInOut
                 )
             );

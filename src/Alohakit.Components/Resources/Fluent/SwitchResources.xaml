@@ -17,8 +17,8 @@
             <!-- TRACK -->
             <alohakit:RoundRectangle
                 x:Name="Part_Track"
-	            X="0"
-	            Y="0"
+	            X="1"
+	            Y="1"
 	            HeightRequest="20"
                 WidthRequest="40" 
                 Opacity="{Binding TrackOpacity}"
@@ -28,15 +28,15 @@
                 x:Name="Part_Track_Outline"
                 X="1"
 	            Y="1"
-	            HeightRequest="19"
-                WidthRequest="39" 
+	            HeightRequest="20"
+                WidthRequest="40" 
                 Stroke="{Binding OutlineColor}"
                 StrokeThickness="{Binding OutlineWidth}" />
             <!-- THUMB -->
             <alohakit:Ellipse
                 x:Name="Part_Thumb"
-	            X="4"
-	            Y="4"
+	            X="5"
+	            Y="5"
 	            WidthRequest="12"
 	            HeightRequest="12"
                 Opacity="{Binding ThumbOpacity}"
@@ -46,8 +46,8 @@
 
     <Style x:Key="FluentSwitchStyle" TargetType="components:Switch">
         <Setter Property="ControlTemplate" Value="{StaticResource FluentSwitchTemplate}" />
-        <Setter Property="WidthRequest" Value="41" />
-        <Setter Property="HeightRequest" Value="21" />
+        <Setter Property="WidthRequest" Value="42" />
+        <Setter Property="HeightRequest" Value="22" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="OutlineWidth" Value="1" />
