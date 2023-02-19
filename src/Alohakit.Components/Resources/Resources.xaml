@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Resources.Resources"
+    xmlns:cupertino="clr-namespace:Alohakit.Components.Resources.Cupertino"
+    xmlns:fluent="clr-namespace:Alohakit.Components.Resources.Fluent"
+    xmlns:material="clr-namespace:Alohakit.Components.Resources.Material">
+    <ResourceDictionary.MergedDictionaries>
+        <!-- CUPERTINO RESOURCES -->
+        <cupertino:Resources />
+        <!-- FLUENT RESOURCES -->
+        <fluent:Resources />
+        <!-- MATERIAL RESOURCES -->
+        <material:Resources />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

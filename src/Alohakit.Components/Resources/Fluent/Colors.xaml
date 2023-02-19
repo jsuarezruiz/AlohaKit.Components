@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Resources.Fluent.Colors">
+    
+    <!-- PRIMARY COLORS -->
+    <Color x:Key="Fluent.Color.Primary.ThemeDarker">#004578</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemeDark">#005A9E</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemeDarkAlt">#106EBE</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemePrimary">#0078D4</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemeSecondary">#2B88D8</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemeTertiary">#71AFE5</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemeLight">#C7E0F4</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemeLighter">#DEECF9</Color>
+    <Color x:Key="Fluent.Color.Primary.ThemeLighterAlt">#EFF6FC</Color>
+   
+    <!-- FOREGROUND COLORS -->
+    <Color x:Key="Fluent.Color.Foreground.Black">#000000</Color>
+    <Color x:Key="Fluent.Color.Foreground.NeutralDark">#201f1E</Color>
+    <Color x:Key="Fluent.Color.Foreground.NeutralPrimary">#323130</Color>
+    <Color x:Key="Fluent.Color.Foreground.NeutralPrimaryAlt">#3B3A39</Color>
+    <Color x:Key="Fluent.Color.Foreground.NeutralSecondary">#605E5C</Color>
+    <Color x:Key="Fluent.Color.Foreground.NeutralTertialy">#A19F9D</Color>
+    <Color x:Key="Fluent.Color.Foreground.White">#FFFFFF</Color>
+    
+    <!-- BACKGROUND COLORS -->
+    <Color x:Key="Fluent.Color.Background.NeutralTertiaryAlt">#C8C6C4</Color>
+    <Color x:Key="Fluent.Color.Background.NeutralDark">#201F1E</Color>
+    <Color x:Key="Fluent.Color.Background.NeutralQuaternaryAlt">#E1DFDD</Color>
+    <Color x:Key="Fluent.Color.Background.NeutralLight">#EDEBE9</Color>
+    <Color x:Key="Fluent.Color.Background.NeutralLighter">#F3F2F1</Color>
+    <Color x:Key="Fluent.Color.Background.NeutralLighterAlt">#FAF9F8</Color>
+    
+</ResourceDictionary>

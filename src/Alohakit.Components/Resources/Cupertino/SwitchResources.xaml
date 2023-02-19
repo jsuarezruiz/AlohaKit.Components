@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Resources.Cupertino.SwitchResources"
+    xmlns:alohakit="clr-namespace:AlohaKit.UI;assembly=AlohaKit.UI"
+    xmlns:components="clr-namespace:Alohakit.Components">
+
+    <ControlTemplate x:Key="CupertinoSwitchTemplate">
+        <alohakit:CanvasView
+            x:Name="Part_Canvas"
+            BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
+            HeightRequest="{Binding HeightRequest}"
+            WidthRequest="{Binding WidthRequest}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <!-- TRACK -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Track"
+	            X="0"
+	            Y="0"
+	            HeightRequest="30"
+                WidthRequest="51"
+                Opacity="{Binding TrackOpacity}"
+                Fill="{Binding TrackColor}" />
+            <!-- OUTLINE -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Track_Outline"
+	            X="0"
+	            Y="0"
+	            HeightRequest="30"
+                WidthRequest="51"
+                Stroke="{Binding OutlineColor}"
+                StrokeThickness="{Binding OutlineWidth}" />
+            <!-- THUMB -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Thumb"
+	            X="0"
+	            Y="4"
+	            WidthRequest="22"
+	            HeightRequest="22"
+                CornerRadius="24"
+                Opacity="{Binding ThumbOpacity}"
+                Fill="{Binding ThumbColor}">
+                <alohakit:RoundRectangle.Shadow>
+                    <alohakit:Shadow
+                        Offset="2, 2"
+                        Radius="6"
+                        Color="LightGray"/>
+                </alohakit:RoundRectangle.Shadow>
+            </alohakit:RoundRectangle>
+        </alohakit:CanvasView>
+    </ControlTemplate>
+
+    <Style x:Key="CupertinoSwitchStyle" TargetType="components:Switch">
+        <Setter Property="ControlTemplate" Value="{StaticResource CupertinoSwitchTemplate}" />
+        <Setter Property="WidthRequest" Value="51" />
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="OutlineWidth" Value="0" />
+        <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Background.Secondary}" />
+        <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="normal">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="hovered">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="pressed">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.4" />
+                            <Setter Property="ThumbOpacity" Value="0.8" />
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="normal:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="hovered:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="pressed:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="disabled:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.4" />
+                            <Setter Property="ThumbOpacity" Value="0.8" />
+                            <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

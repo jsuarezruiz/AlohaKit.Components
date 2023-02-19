@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Resources.Material.SwitchResources"
+    xmlns:alohakit="clr-namespace:AlohaKit.UI;assembly=AlohaKit.UI"
+    xmlns:components="clr-namespace:Alohakit.Components">
+    
+    <ControlTemplate x:Key="MaterialSwitchTemplate">
+        <alohakit:CanvasView
+            x:Name="Part_Canvas"
+            BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
+            HeightRequest="{Binding HeightRequest}"
+            WidthRequest="{Binding WidthRequest}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <!-- TRACK -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Track"
+	            X="0"
+	            Y="0"
+	            HeightRequest="24"
+                WidthRequest="34"
+                Fill="{Binding TrackColor}" />
+            <!-- OUTLINE -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Track_Outline"
+	            X="0"
+	            Y="0"
+	            HeightRequest="24"
+                WidthRequest="34"
+                Stroke="{Binding OutlineColor}"
+                StrokeThickness="{Binding OutlineWidth}" />
+            <!-- THUMB -->
+            <alohakit:Ellipse
+                x:Name="Part_Thumb"
+	            X="6"
+	            Y="6"
+	            WidthRequest="12"
+	            HeightRequest="12"
+                Fill="{Binding ThumbColor}"/>
+        </alohakit:CanvasView>
+    </ControlTemplate>
+
+    <Style x:Key="MaterialSwitchStyle" TargetType="components:Switch">
+        <Setter Property="ControlTemplate" Value="{StaticResource MaterialSwitchTemplate}" />
+        <Setter Property="WidthRequest" Value="34" />
+        <Setter Property="HeightRequest" Value="24" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="OutlineWidth" Value="2" />
+        <Setter Property="TrackColor" Value="{DynamicResource Material.Color.SurfaceVariantColor}" />
+        <Setter Property="OutlineColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+        <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+        <Setter Property="RippleColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="normal">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.SurfaceVariantColor}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+                            <Setter Property="RippleColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="hovered">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.SurfaceVariantColor}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+                            <Setter Property="RippleColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="pressed">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.SurfaceVariantColor}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+                            <Setter Property="RippleColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.4" />
+                            <Setter Property="ThumbOpacity" Value="0.8" />
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.SurfaceVariantColor}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Material.Color.OnSurfaceColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OnSurfaceColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="normal:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Material.Color.OutlineColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OnPrimaryColor}" />
+                            <Setter Property="RippleColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="hovered:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OnPrimaryColor}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="pressed:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OnPrimaryColor}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="disabled:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.4" />
+                            <Setter Property="ThumbOpacity" Value="0.8" />
+                            <Setter Property="TrackColor" Value="{DynamicResource Material.Color.OnSurfaceColor}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.SurfaceColor}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

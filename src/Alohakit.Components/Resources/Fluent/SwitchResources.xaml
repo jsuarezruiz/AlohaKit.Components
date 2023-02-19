@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Resources.Fluent.SwitchResources" 
+    xmlns:alohakit="clr-namespace:AlohaKit.UI;assembly=AlohaKit.UI"
+    xmlns:components="clr-namespace:Alohakit.Components">
+
+    <ControlTemplate x:Key="FluentSwitchTemplate">
+        <alohakit:CanvasView
+            x:Name="Part_Canvas"
+            BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
+            HeightRequest="{Binding HeightRequest}"
+            WidthRequest="{Binding WidthRequest}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <!-- TRACK -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Track"
+	            X="0"
+	            Y="0"
+	            HeightRequest="20"
+                WidthRequest="40" 
+                Opacity="{Binding TrackOpacity}"
+                Stroke="{Binding OutlineColor}"
+                StrokeThickness="{Binding OutlineWidth}" 
+                Fill="{Binding TrackColor}" />
+            <!-- THUMB -->
+            <alohakit:Ellipse
+                x:Name="Part_Thumb"
+	            X="4"
+	            Y="4"
+	            WidthRequest="12"
+	            HeightRequest="12"
+                Opacity="{Binding ThumbOpacity}"
+                Fill="{Binding ThumbColor}"/>
+        </alohakit:CanvasView>
+    </ControlTemplate>
+
+    <Style x:Key="FluentSwitchStyle" TargetType="components:Switch">
+        <Setter Property="ControlTemplate" Value="{StaticResource FluentSwitchTemplate}" />
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="20" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="OutlineWidth" Value="1" />
+        <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+        <Setter Property="OutlineColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralSecondary}" />
+        <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralSecondary}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="normal">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralSecondary}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralSecondary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="hovered">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralDark}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralDark}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="pressed">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralDark}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralDark}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.4" />
+                            <Setter Property="ThumbOpacity" Value="0.4" />
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+                            <Setter Property="OutlineColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralSecondary}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralSecondary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="normal:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Primary.ThemePrimary}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="hovered:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Primary.ThemeDark}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="pressed:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Primary.ThemeDark}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="disabled:checked">
+                        <VisualState.Setters>
+                            <Setter Property="TrackOpacity" Value="0.4" />
+                            <Setter Property="ThumbOpacity" Value="0.8" />
+                            <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Background.NeutralTertiaryAlt}" />
+                            <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Background.NeutralLighter}" />
+                            <Setter Property="OutlineWidth" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

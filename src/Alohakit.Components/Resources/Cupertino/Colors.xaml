@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Resources.Cupertino.Colors">
+
+    <!-- BASIC -->
+    <Color x:Key="Cupertino.Color.Basic.White">#FFFFFF</Color>
+    <Color x:Key="Cupertino.Color.Basic.Black">#000000</Color>
+    <Color x:Key="Cupertino.Color.Basic.LightBackgroundGray">#E5E5EA</Color>
+    <Color x:Key="Cupertino.Color.Basic.ExtraLightBackgroundGray">#EFEFF4</Color>
+    <Color x:Key="Cupertino.Color.Basic.DarkBackgroundGray">#171717</Color>
+    <Color x:Key="Cupertino.Color.Basic.InactiveGray">#999999</Color>
+    <Color x:Key="Cupertino.Color.Basic.DestructiveRed">#FF3B30</Color>
+    
+    <!-- ACTIVE -->
+    <Color x:Key="Cupertino.Color.Active.Blue">#007AFF</Color>
+    <Color x:Key="Cupertino.Color.Active.Green">#34C759</Color>
+    <Color x:Key="Cupertino.Color.Active.Orange">#FF9500</Color>
+   
+    <!-- SYSTEM -->
+    <Color x:Key="Cupertino.Color.System.Blue">#007AFF</Color>
+    <Color x:Key="Cupertino.Color.System.Green">#34C759</Color>
+    <Color x:Key="Cupertino.Color.System.Indigo">#5856D6</Color>
+    <Color x:Key="Cupertino.Color.System.Orange">#FF9500</Color>
+    <Color x:Key="Cupertino.Color.System.Pink">#FF2D55</Color>
+    <Color x:Key="Cupertino.Color.System.Purple">#AF52DE</Color>
+    <Color x:Key="Cupertino.Color.System.Red">#FF3B30</Color>
+    <Color x:Key="Cupertino.Color.System.Teal">#5AC8FA</Color>
+    <Color x:Key="Cupertino.Color.System.Yellow">#FFCC00</Color>
+    <Color x:Key="Cupertino.Color.System.Grey">#8E8E93</Color>
+    <Color x:Key="Cupertino.Color.System.Grey2">#AEAEB2</Color>
+    <Color x:Key="Cupertino.Color.System.Grey3">#C7C7CC</Color>
+    <Color x:Key="Cupertino.Color.System.Grey4">#D1D1D6</Color>
+    <Color x:Key="Cupertino.Color.System.Grey5">#E5E5EA</Color>
+    <Color x:Key="Cupertino.Color.System.Grey6">#F2F2F7</Color>
+    <Color x:Key="Cupertino.Color.System.Fill">#E4E4E6</Color>
+    <Color x:Key="Cupertino.Color.System.SecondaryFill">#EAEAEB</Color>
+    <Color x:Key="Cupertino.Color.System.TertiaryFill">#EFEFF0</Color>
+    <Color x:Key="Cupertino.Color.System.QuaternaryFill">#F4F4F5</Color>
+    
+    <!-- LABEL -->
+    <Color x:Key="Cupertino.Color.Label.Primary">#000000</Color>
+    <Color x:Key="Cupertino.Color.Label.Secondary">#8A8A8E</Color>
+    <Color x:Key="Cupertino.Color.Label.Tertiary">#C5C5C7</Color>
+    <Color x:Key="Cupertino.Color.Label.Quaternary">#DDDDDE</Color>
+    <Color x:Key="Cupertino.Color.Label.Placeholder">#C5C5C7</Color>
+    <Color x:Key="Cupertino.Color.Label.Separator">#C7C7C9</Color>
+    <Color x:Key="Cupertino.Color.Label.OpaqueSeparator">#C6C6C8</Color>
+    <Color x:Key="Cupertino.Color.Label.Link">#007AFF</Color>
+    
+    <!-- BACKGROUND -->
+    <Color x:Key="Cupertino.Color.Background.Primary">#FFFFFF</Color>
+    <Color x:Key="Cupertino.Color.Background.Secondary">#F2F2F7</Color>
+    <Color x:Key="Cupertino.Color.Background.Tertiary">#FFFFFF</Color>
+    <Color x:Key="Cupertino.Color.Background.Grouped">#F2F2F7</Color>
+    <Color x:Key="Cupertino.Color.Background.SecondaryGrouped">#FFFFFF</Color>
+    <Color x:Key="Cupertino.Color.Background.TertiaryGrouped">#F2F2F7</Color>
+    
+</ResourceDictionary>

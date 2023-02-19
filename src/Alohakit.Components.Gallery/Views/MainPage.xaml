@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Gallery.Views.MainPage"
+    xmlns:components="clr-namespace:Alohakit.Components;assembly=Alohakit.Components"
+    Title="AlohaKit Components">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
+            <Style x:Key="SectionTitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Margin" Value="0, 6" />
+            </Style>
+
+            <Style TargetType="Border">
+                <Setter Property="StrokeShape" Value="RoundRectangle 12" />
+                <Setter Property="Stroke" Value="DarkGray" />
+                <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="Margin" Value="0, 12" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="12" Margin="12">
+            <Label
+                Text="Cupertino Components"
+                Style="{StaticResource TitleStyle}"/>
+            <!-- SWITCH -->
+            <Grid
+                RowDefinitions="Auto, *">
+                <Label
+                    Text="Switch"
+                    Style="{StaticResource SectionTitleStyle}"/>
+                <Border
+                    Grid.Row="1">
+                    <HorizontalStackLayout Padding="20" Spacing="50">
+                        <components:Switch Visual="Cupertino" />
+                        <components:Switch Visual="Cupertino" IsChecked="True" />
+                        <components:Switch Visual="Cupertino" IsEnabled="False" />
+                        <components:Switch Visual="Cupertino" IsChecked="True" IsEnabled="False" />
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+            <Label
+                Text="Fluent Components"
+                Style="{StaticResource TitleStyle}"/>
+            <!-- SWITCH -->
+            <Grid
+                RowDefinitions="Auto, *">
+                <Label
+                    Text="Switch"
+                    Style="{StaticResource SectionTitleStyle}"/>
+                <Border
+                    Grid.Row="1">
+                    <HorizontalStackLayout Padding="20" Spacing="50">
+                        <components:Switch Visual="Fluent" />
+                        <components:Switch Visual="Fluent" IsChecked="True" />
+                        <components:Switch Visual="Fluent" IsEnabled="False" />
+                        <components:Switch Visual="Fluent" IsChecked="True" IsEnabled="False" />
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+            <Label
+                Text="Material Components"
+                Style="{StaticResource TitleStyle}"/>
+            <!-- SWITCH -->
+            <Grid
+                RowDefinitions="Auto, *">
+                <Label
+                    Text="Switch"
+                    Style="{StaticResource SectionTitleStyle}"/>
+                <Border
+                    Grid.Row="1">
+                    <HorizontalStackLayout Padding="20" Spacing="50">
+                        <components:Switch Visual="Material" />
+                        <components:Switch Visual="Material" IsChecked="True" />
+                        <components:Switch Visual="Material" IsEnabled="False" />
+                        <components:Switch Visual="Material" IsChecked="True" IsEnabled="False" />
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

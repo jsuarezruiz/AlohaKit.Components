@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Alohakit.Components.Resources.Material.Colors">
+
+    <!-- ACCENT COLORS -->
+    
+    <!-- PRIMARY KEY COLORS -->
+    <Color x:Key="Material.Color.PrimaryColor">#6750A4</Color>
+    <Color x:Key="Material.Color.OnPrimaryColor">#FFFFFF</Color>
+    <Color x:Key="Material.Color.PrimaryContainerColor">#EADDFF</Color>
+    <Color x:Key="Material.Color.OnPrimaryContainerColor">#21005E</Color>
+
+    <!-- SECONDARY KEY COLORS -->
+    <Color x:Key="Material.Color.SecondaryColor">#625B71</Color>
+    <Color x:Key="Material.Color.OnSecondaryColor">#FFFFFF</Color>
+    <Color x:Key="Material.Color.SecondaryContainerColor">#E8DEF8</Color>
+    <Color x:Key="Material.Color.OnSecondaryContainerColor">#1E192B</Color>
+    
+    <!-- TERTIARY KEY COLORS -->
+    <Color x:Key="Material.Color.TertiaryColor">#7D5260</Color>
+    <Color x:Key="Material.Color.OnTertiaryColor">#FFFFFF</Color>
+    <Color x:Key="Material.Color.TertiaryContainerColor">#FFD8E4</Color>
+    <Color x:Key="Material.Color.OnTertiaryContainerColor">#370B1E</Color>
+    
+    <!-- NEUTRAL KEY COLORS -->
+    <Color x:Key="Material.Color.SurfaceColor">#FFFBFE</Color>
+    <Color x:Key="Material.Color.SurfaceVariantColor">#E7E0EC</Color>  
+    
+    <!-- NEUTRAL VARIANT KEY COLORS -->
+    <Color x:Key="Material.Color.OnSurfaceColor">#1C1B1F</Color>
+    <Color x:Key="Material.Color.OnSurfaceVariantColor">#49454E</Color>
+
+    <Color x:Key="Material.Color.OutlineColor">#79747E</Color>
+    <Color x:Key="Material.Color.ShadowColor">#000000</Color>
+    
+    <!-- ERROR COLORS -->
+    <Color x:Key="Material.Color.ErrorColor">#B3261E</Color>
+    <Color x:Key="Material.Color.ErrorContainerColor">#F9DEDC</Color>
+    <Color x:Key="Material.Color.OnErrorColor">#FFFFFF</Color>
+    <Color x:Key="Material.Color.OnErrorContainerColor">#370B1E</Color>
+    
+</ResourceDictionary>
