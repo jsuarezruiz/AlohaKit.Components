@@ -11,12 +11,14 @@ namespace Alohakit.Components
     {
         const string ElementCanvasView = "Part_Canvas";
         const string ElementTrack = "Part_Track"; 
-        const string ElementOutline = "Part_Track_Outline";
+        const string ElementOutline = "Part_Track_Outline"; 
+        const string ElementThumbEffect = "Part_Thumb_Effect";
         const string ElementThumb = "Part_Thumb";
 
         CanvasView _canvasView;
         RoundRectangle _track;
         RoundRectangle _outline;
+        Shape _thumbEffect;
         Shape _thumb;
 
         IAnimationManager _animationManager;
@@ -132,7 +134,8 @@ namespace Alohakit.Components
             
             _canvasView = GetTemplateChild(ElementCanvasView) as CanvasView;
             _track = GetTemplateChild(ElementTrack) as RoundRectangle;
-            _outline = GetTemplateChild(ElementOutline) as RoundRectangle; 
+            _outline = GetTemplateChild(ElementOutline) as RoundRectangle;
+            _thumbEffect = GetTemplateChild(ElementThumbEffect) as Shape;
             _thumb = GetTemplateChild(ElementThumb) as Shape;
 
             if(_canvasView != null)
@@ -155,8 +158,8 @@ namespace Alohakit.Components
                 case ComponentState.Normal:
                     state = IsChecked ? "normal:checked" : "normal";
                     break;
-                case ComponentState.Hovered:
-                    state = IsChecked ? "hovered:checked" : "hovered";
+                case ComponentState.MouseOver:
+                    state = IsChecked ? "mouseover:checked" : "mouseover";
                     break;
                 case ComponentState.Pressed:
                     state = IsChecked ? "pressed:checked" : "pressed";
@@ -215,10 +218,8 @@ namespace Alohakit.Components
                     easing: Easing.SinInOut,
                     finished: () =>
                     {
-
                         RippleProgress = 0;
                         _canvasView?.Invalidate();
-
                     }
                 ));
         }
@@ -265,10 +266,20 @@ namespace Alohakit.Components
                 _outline.CornerRadius = cornerRadius;
             }
 
-            if(_thumb != null)
+            if(_thumbEffect != null)
             {
-                var lX = 6;
-                var rX = _track.WidthRequest - (lX + _thumb.WidthRequest);
+                var lX = 0;
+                var rX = (float)(_canvasView.WidthRequest - (lX + _thumbEffect.WidthRequest));
+                _thumbEffect.X = GetThumbPosition(lX, rX);
+
+                var isAnimating = ThumbPositionProgress != 1.0;
+                _thumbEffect.IsVisible = IsPointerOver && !isAnimating;
+            }
+
+            if (_thumb != null)
+            {
+                var lX = 8;
+                var rX = (float)(_canvasView.WidthRequest - (lX + _thumb.WidthRequest));
                 _thumb.X = GetThumbPosition(lX, rX);
             }
         }

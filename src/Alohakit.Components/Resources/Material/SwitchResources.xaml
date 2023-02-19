@@ -17,25 +17,35 @@
             <!-- TRACK -->
             <alohakit:RoundRectangle
                 x:Name="Part_Track"
-	            X="0"
-	            Y="0"
+	            X="2"
+	            Y="2"
 	            HeightRequest="24"
                 WidthRequest="34"
                 Fill="{Binding TrackColor}" />
             <!-- OUTLINE -->
             <alohakit:RoundRectangle
                 x:Name="Part_Track_Outline"
-	            X="0"
-	            Y="0"
+	            X="2"
+	            Y="2"
 	            HeightRequest="24"
                 WidthRequest="34"
                 Stroke="{Binding OutlineColor}"
                 StrokeThickness="{Binding OutlineWidth}" />
             <!-- THUMB -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Thumb_Effect"
+	            X="0"
+	            Y="0"
+	            WidthRequest="28"
+	            HeightRequest="28"
+                CornerRadius="24"
+                IsVisible="{Binding IsPointerOver}"
+                Opacity="0.25"
+                Fill="{Binding ThumbColor}"/>
             <alohakit:Ellipse
                 x:Name="Part_Thumb"
-	            X="6"
-	            Y="6"
+	            X="8"
+	            Y="8"
 	            WidthRequest="12"
 	            HeightRequest="12"
                 Fill="{Binding ThumbColor}"/>
@@ -44,8 +54,8 @@
 
     <Style x:Key="MaterialSwitchStyle" TargetType="components:Switch">
         <Setter Property="ControlTemplate" Value="{StaticResource MaterialSwitchTemplate}" />
-        <Setter Property="WidthRequest" Value="34" />
-        <Setter Property="HeightRequest" Value="24" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="HeightRequest" Value="28" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="OutlineWidth" Value="2" />
@@ -64,7 +74,7 @@
                             <Setter Property="RippleColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="hovered">
+                    <VisualState x:Name="mouseover">
                         <VisualState.Setters>
                             <Setter Property="TrackColor" Value="{DynamicResource Material.Color.SurfaceVariantColor}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Material.Color.OutlineColor}" />
@@ -98,7 +108,7 @@
                             <Setter Property="OutlineWidth" Value="0" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="hovered:checked">
+                    <VisualState x:Name="mouseover:checked">
                         <VisualState.Setters>
                             <Setter Property="TrackColor" Value="{DynamicResource Material.Color.PrimaryColor}" />
                             <Setter Property="ThumbColor" Value="{DynamicResource Material.Color.OnPrimaryColor}" />

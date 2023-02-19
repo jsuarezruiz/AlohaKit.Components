@@ -18,9 +18,17 @@ namespace Alohakit.Components
         {
             InitializeComponent();
         }
+        public static readonly BindableProperty IsPointerOverProperty =
+            BindableProperty.Create(nameof(Component.IsPointerOver), typeof(bool), typeof(Component), false);
 
         public static new readonly BindableProperty VisualProperty = VisualComponent.VisualProperty;
-       
+
+        public bool IsPointerOver
+        {
+            get => (bool)GetValue(IsPointerOverProperty);
+            set => SetValue(IsPointerOverProperty, value);
+        }
+
         public new Visual Visual
         {
             get => (Visual)GetValue(VisualProperty);
@@ -100,9 +108,19 @@ namespace Alohakit.Components
 
         void OnCanvasViewStartInteraction(object sender, TouchEventArgs e) => UpdateComponentState(ComponentState.Pressed);
 
-        void OnCanvasViewHoverInteraction(object sender, TouchEventArgs e) => UpdateComponentState(ComponentState.Hovered);
+        void OnCanvasViewHoverInteraction(object sender, TouchEventArgs e)
+        {
+            IsPointerOver = IsEnabled;
 
-        void OnCanvasViewEndHoverInteraction(object sender, EventArgs e) => UpdateComponentState(ComponentState.Normal);
+            UpdateComponentState(ComponentState.MouseOver);
+        }
+
+        void OnCanvasViewEndHoverInteraction(object sender, EventArgs e)
+        {
+            IsPointerOver = false;
+
+            UpdateComponentState(ComponentState.Normal);
+        }
 
         void OnCanvasViewEndInteraction(object sender, TouchEventArgs e) => UpdateComponentState(ComponentState.Normal);
 

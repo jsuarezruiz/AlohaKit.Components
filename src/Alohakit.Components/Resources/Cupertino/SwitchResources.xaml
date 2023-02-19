@@ -71,7 +71,7 @@
                             <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="hovered">
+                    <VisualState x:Name="mouseover">
                         <VisualState.Setters>
                             <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.System.Fill}" />
@@ -101,7 +101,7 @@
                             <Setter Property="ThumbColor" Value="{DynamicResource Cupertino.Color.Background.Primary}" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="hovered:checked">
+                    <VisualState x:Name="mouseover:checked">
                         <VisualState.Setters>
                             <Setter Property="TrackColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Cupertino.Color.Active.Green}" />

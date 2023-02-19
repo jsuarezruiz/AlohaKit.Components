@@ -22,9 +22,16 @@
 	            HeightRequest="20"
                 WidthRequest="40" 
                 Opacity="{Binding TrackOpacity}"
-                Stroke="{Binding OutlineColor}"
-                StrokeThickness="{Binding OutlineWidth}" 
                 Fill="{Binding TrackColor}" />
+            <!-- OUTLINE -->
+            <alohakit:RoundRectangle
+                x:Name="Part_Track_Outline"
+                X="1"
+	            Y="1"
+	            HeightRequest="19"
+                WidthRequest="39" 
+                Stroke="{Binding OutlineColor}"
+                StrokeThickness="{Binding OutlineWidth}" />
             <!-- THUMB -->
             <alohakit:Ellipse
                 x:Name="Part_Thumb"
@@ -39,8 +46,8 @@
 
     <Style x:Key="FluentSwitchStyle" TargetType="components:Switch">
         <Setter Property="ControlTemplate" Value="{StaticResource FluentSwitchTemplate}" />
-        <Setter Property="WidthRequest" Value="40" />
-        <Setter Property="HeightRequest" Value="20" />
+        <Setter Property="WidthRequest" Value="41" />
+        <Setter Property="HeightRequest" Value="21" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="OutlineWidth" Value="1" />
@@ -57,7 +64,7 @@
                             <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralSecondary}" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="hovered">
+                    <VisualState x:Name="mouseover">
                         <VisualState.Setters>
                             <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />
                             <Setter Property="OutlineColor" Value="{DynamicResource Fluent.Color.Foreground.NeutralDark}" />
@@ -87,7 +94,7 @@
                             <Setter Property="OutlineWidth" Value="0" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="hovered:checked">
+                    <VisualState x:Name="mouseover:checked">
                         <VisualState.Setters>
                             <Setter Property="TrackColor" Value="{DynamicResource Fluent.Color.Primary.ThemeDark}" />
                             <Setter Property="ThumbColor" Value="{DynamicResource Fluent.Color.Foreground.White}" />

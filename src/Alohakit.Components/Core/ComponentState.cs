@@ -3,7 +3,7 @@
     public enum ComponentState
     {
         Normal,
-        Hovered,
+        MouseOver,
         Pressed,
         Disabled,
     }
