@@ -2,7 +2,7 @@
 
 Cupertino, Fluent and Material Controls drawn with high performance and 100% customizable.
 
-![AlohaKit.Components](https://raw.githubusercontent.com/jsuarezruiz/AlohaKit.Components/main/images/alohakit-components-promo.png)
+![AlohaKit.Components](images/alohakit-components-promo.png)
 
 
 ## Copyright and license
