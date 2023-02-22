@@ -82,7 +82,11 @@ In addition to being able to modify any property, color or size, you can access 
 
 **A11y Support**
 
+(Work in progress)
+
 **RTL Support**
+
+(Work in progress)
 
 ## Copyright and license
 
