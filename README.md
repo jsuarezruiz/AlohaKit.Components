@@ -52,13 +52,12 @@ Among the possibilities to customize we have the use of ControlTemplates just li
             Opacity="{TemplateBinding TrackOpacity}"
             Fill="{TemplateBinding TrackColor}" />
         <!-- THUMB -->
-        <alohakit:RoundRectangle
+        <alohakit:Ellipse
             x:Name="Part_Thumb"
             X="4"
             Y="4"
             WidthRequest="22"
             HeightRequest="22"
-            CornerRadius="24"
             Opacity="{TemplateBinding ThumbOpacity}"
             Stroke="{TemplateBinding OutlineColor}"
             StrokeThickness="{Binding OutlineWidth}"
